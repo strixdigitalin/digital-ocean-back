@@ -12,6 +12,7 @@
     "body-parser": "^1.18.2",
     "composable-middleware": "^0.3.0",
     "cors": "^2.8.4",
+    "cross-env": "^7.0.3",
     "dotenv": "^5.0.1",
     "es6-promisify": "^6.0.0",
     "exceljs": "^4.2.1",
@@ -58,7 +59,7 @@
   "scripts": {
     "start": "node ./server/www.js",
     "test": "NODE_ENV=test ./node_modules/mocha/bin/_mocha --timeout 100000",
-    "dev": "NODE_ENV=development&supervisor -- ./server/www.js -e js,json"
+    "dev": "cross-env NODE_ENV=development&supervisor -- ./server/www.js -e js,json"
   },
   "author": "Tuong Tran <tuong.tran@outlook.com>",
   "license": "ISC"

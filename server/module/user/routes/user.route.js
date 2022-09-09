@@ -178,7 +178,15 @@ module.exports = router => {
    * @apiUse userProfileResponse
    * @apiPermission user
    */
-  router.get('/v1/users/me', Middleware.isAuthenticated, userController.me, Middleware.Response.success('me'));
+  router.get(
+    '/v1/users/me',
+    () => {
+      console.log('herer');
+    },
+    Middleware.isAuthenticated,
+    userController.me,
+    Middleware.Response.success('me')
+  );
 
   /**
    * @apiGroup User

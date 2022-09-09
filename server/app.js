@@ -1,8 +1,14 @@
 const path = require('path');
 const nconf = require('nconf');
 
+
 // cause we have to run queue with local file, so we will create queue name just for single server
 // for scaling, so we will create a random key her as prefix/subfix for some queue
+
+
+
+
+
 process.env.LOCAL_ID = Math.random().toString(36).substring(7);
 
 nconf
@@ -35,7 +41,7 @@ kernel.loadModule(require('./module/coupon'));
 kernel.loadModule(require('./module/testimonial'));
 kernel.loadModule(require('./module/favorite'));
 kernel.loadModule(require('./module/message'));
-kernel.loadModule(require('./module/socket'));
+// kernel.loadModule(require('./module/socket'));
 kernel.loadModule(require('./module/stats'));
 kernel.loadModule(require('./module/course'));
 kernel.loadModule(require('./module/zoomus'));
