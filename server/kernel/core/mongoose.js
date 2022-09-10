@@ -2,21 +2,21 @@ const mongoose = require('mongoose');
 
 const MONGOOSE_RECONNECT_MS = 1000;
 // const mongURI = 'mongodb+srv://lakheraakshay:Akshaylakhera@cluster0.qo4hk.mongodb.net/?tlsInsecure=true&retryWrites=true&w=majority';
-const mongURI = 'mongodb+srv://akshay:akshay@cluster0.xzuoyan.mongodb.net/?retryWrites=true&w=majority';
 async function reconnect() {
   const uri = process.env.MONGO_URI;
   console.log(uri, '<<<<< uri \n\n');
+  // eslint-disable-next-line no-return-await
   return await mongoose
     .connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true
-      // useCreateIndex: true,
-      // useFindAndModify: false,
     })
+    // eslint-disable-next-line arrow-parens
     .then(result => {
       console.log('connected');
       return result;
     })
+    // eslint-disable-next-line arrow-parens
     .catch(err => {
       console.log('ERROR WHILE CONNECTION DATABASE ');
       console.log('>>>>>>>');
