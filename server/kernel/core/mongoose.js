@@ -7,7 +7,7 @@ async function reconnect() {
   const uri = process.env.MONGO_URI;
   console.log(uri, '<<<<< uri \n\n');
   return await mongoose
-    .connect(uri, {
+    .connect('mongodb://' + uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true
       // useCreateIndex: true,
