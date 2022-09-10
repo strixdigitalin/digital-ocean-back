@@ -42,7 +42,6 @@ styles
 vendors
 .build
 .vscode
-.env*
 yarn.lock
 SPHRS.note.txt
 .yo-rc.json
