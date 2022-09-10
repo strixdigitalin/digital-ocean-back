@@ -30,11 +30,12 @@ exports.core = kernel => {
 
   const whitelist = [nconf.get('userWebUrl'), nconf.get('adminURL')];
   const corsOptionsDelegate = function (req, callback) {
-    if (whitelist.indexOf(req.header('Origin')) !== -1 || req.get('host') == nconf.get('host')) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+    callback(null, true);
+    // if (whitelist.indexOf(req.header('Origin')) !== -1 || req.get('host') == nconf.get('host')) {
+    //   callback(null, true);
+    // } else {
+    //   callback(new Error('Not allowed by CORS'));
+    // }
   };
   process.env.ALLOW_CORS && kernel.app.use(cors(corsOptionsDelegate));
   //process.env.ALLOW_CORS && kernel.app.use(cors());
